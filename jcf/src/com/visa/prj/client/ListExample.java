@@ -21,7 +21,7 @@ public class ListExample {
 		
 		Map<String, List<Product>> catMap = 
 				products.parallelStream().collect(Collectors.groupingBy(p -> p.getCategory()));
-		
+		System.out.println("_________________________");
 		//if we want to access specific key-value pairs then this method
 		Set<String> keys = catMap.keySet();
 		for(String key : keys) {
@@ -30,6 +30,7 @@ public class ListExample {
 			prds.forEach(System.out::println);
 			System.out.println();
 		}
+		System.out.println("_____________________");
 		
 		// if we want to traverse the whole map then this method
 		catMap.forEach((k,v) -> {
