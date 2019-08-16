@@ -35,7 +35,7 @@ public class Booking implements Serializable {
 	@JoinColumn(name="username")
 	private User user;
 
-	@OneToOne
+	@ManyToOne
 	@JoinColumn(name="id") 
 	private Hotel hotel;
 
