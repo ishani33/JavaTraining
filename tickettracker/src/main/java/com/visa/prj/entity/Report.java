@@ -6,14 +6,14 @@ public class Report {
 
 	private int id;
 	private String resolvedBy;
-	private int time_taken;
+	private long time_taken;
 	private Date startDate;
 	private Date endDate;
 	
-	public Report(int id, String resolvedBy, int time_taken, Date startDate, Date endDate) {
+	public Report(int id, String resolvedBy, Date startDate, Date endDate) {
 		this.id = id;
 		this.resolvedBy = resolvedBy;
-		this.time_taken = time_taken;
+		this.time_taken = 0;
 		this.startDate = startDate;
 		this.endDate = endDate;
 	}
@@ -34,11 +34,11 @@ public class Report {
 		this.resolvedBy = resolvedBy;
 	}
 
-	public int getTime_taken() {
+	public long getTime_taken() {
 		return time_taken;
 	}
 
-	public void setTime_taken(int time_taken) {
+	public void setTime_taken(long time_taken) {
 		this.time_taken = time_taken;
 	}
 
