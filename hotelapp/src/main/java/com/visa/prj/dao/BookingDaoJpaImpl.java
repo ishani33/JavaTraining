@@ -21,8 +21,9 @@ public class BookingDaoJpaImpl implements BookingDao {
 	
 	@Override
 	public List<Hotel> findHotels(String criteria) {
-		String jpql = "select h from Hotel h where h.name like :criteria or h.address like :criteria or h.city like :criteria or h.state like :criteria or h.country like :criteria or h.zip like :criteria";
+		String jpql = "from Hotel h where h.name like :criteria or h.address like :criteria or h.city like :criteria or h.state like :criteria or h.country like :criteria or h.zip like :criteria";
 		TypedQuery<Hotel> query = em.createQuery(jpql,Hotel.class);
+		query.setParameter("criteria", criteria);
 		return query.getResultList();
 	}
 
@@ -42,7 +43,8 @@ public class BookingDaoJpaImpl implements BookingDao {
 
 	@Override
 	public long createBooking(Booking booking) {
-		return 0;
+		em.persist(booking);
+		return booking.getId();
 	}
 
 	@Override

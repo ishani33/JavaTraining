@@ -36,7 +36,7 @@ public class Booking implements Serializable {
 	private User user;
 
 	@ManyToOne
-	@JoinColumn(name="id") 
+	@JoinColumn(name="hotel_id") 
 	private Hotel hotel;
 
 	@Column(name="checkin_date")

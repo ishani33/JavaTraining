@@ -3,6 +3,8 @@ package com.visa.prj.service;
 import java.util.Date;
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -33,8 +35,16 @@ public class BookingService {
 		return bookingDao.getUser(email, password);
 	}
 	
+	@Transactional
 	public void makeBooking(User u, Hotel h, Date checkin, Date checkout, Boolean smoking, int no_of_beds) {
-		 
+		Booking booking = new Booking();
+		booking.setBeds(no_of_beds);
+		booking.setCheckinDate(checkin);
+		booking.setCheckoutDate(checkout);
+		booking.setHotel(h);
+		booking.setSmoking(smoking);
+		booking.setUser(u);
+		bookingDao.createBooking(booking);
 	}
 
 }

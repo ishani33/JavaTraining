@@ -31,3 +31,15 @@ Hint for 3)
 
 	List<Report> 
 	"select new com.visa.prj.entity.Report(t.ticketId, t.ticketDesc, t.resolvedBy.email, ..) from Ticket"
+
+====================================================================================================
+@RequestMapping("cart.do")
+	public String addToCart(HttpServletRequest req) {
+		String[] prds = req.getParameter("prds"); // only product ids
+		// Get product for product id
+		// create Item object
+		// add product to item
+		// create Order object
+		//set customer to order based on who has logged
+		// place order
+	}

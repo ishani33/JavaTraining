@@ -53,5 +53,22 @@ public class OrderService {
 	public Product getById(int id) {
 		return productDao.getProduct(id);
 	}
+	
+	@Transactional
+	public Item createItem(Product p) {
+		Item item = new Item();
+		item.setProduct(p);
+		item.setQty(1);
+		item.setAmount(p.getPrice());
+		return item;
+	}
+	
+	@Transactional
+	public Order createOrder(List<Item> items, Customer c) {
+		Order o = new Order();
+		o.setItems(items);
+		o.setCustomer(c);
+		return o;
+	}
 
 }

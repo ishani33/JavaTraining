@@ -9,7 +9,9 @@ import javax.persistence.TypedQuery;
 import org.springframework.stereotype.Repository;
 
 import com.visa.prj.entity.Customer;
+import com.visa.prj.entity.Item;
 import com.visa.prj.entity.Order;
+import com.visa.prj.entity.Product;
 
 @Repository
 public class OrderDaoJpaImpl implements OrderDao {

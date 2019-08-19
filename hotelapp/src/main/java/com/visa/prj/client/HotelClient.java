@@ -32,7 +32,7 @@ public class HotelClient {
 		
 		System.out.println();
 		System.out.println("HOTEL BY ID");
-		Hotel h = os.getHotelById(220);
+		Hotel h = os.getHotelById(20);
 		System.out.println(h.getName() + ": " + h.getAddress()+", "+h.getCity()+", "+h.getState()+", "+h.getCountry()+", "+h.getZip()+".");
 	}
 
