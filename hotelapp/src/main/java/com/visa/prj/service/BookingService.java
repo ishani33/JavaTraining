@@ -46,6 +46,10 @@ public class BookingService {
 		booking.setUser(u);
 		bookingDao.createBooking(booking);
 	}
+	
+	public List<Hotel> fetchHotels(){
+		return bookingDao.getHotels();
+	}
 
 }
 

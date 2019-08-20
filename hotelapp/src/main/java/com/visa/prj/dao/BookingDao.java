@@ -45,4 +45,6 @@ public interface BookingDao {
 	 * @return all bookings of the login user
 	 */
 	public List<Booking> getAllBookingsOfUser(User user);
+	
+	public List<Hotel> getHotels();
 }

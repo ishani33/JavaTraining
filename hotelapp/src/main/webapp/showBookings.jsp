@@ -60,7 +60,7 @@
 	</table>
 	</c:if>
 	<div>
-		<a href="search.action">Change Search</a> 
+		<a href="search.do">Change Search</a> 
 	</div>
 </div>
 

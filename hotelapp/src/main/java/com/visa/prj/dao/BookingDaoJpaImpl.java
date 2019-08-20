@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
 import org.springframework.stereotype.Repository;
@@ -52,6 +51,13 @@ public class BookingDaoJpaImpl implements BookingDao {
 		String jpql = "select b from Booking b where b.user=:arg1";
 		TypedQuery<Booking> query = em.createQuery(jpql, Booking.class);
 		query.setParameter("arg1", user);
+		return query.getResultList();
+	}
+
+	@Override
+	public List<Hotel> getHotels() {
+		String jpql = "from Hotel"; //select p from Product p
+		TypedQuery<Hotel> query = em.createQuery(jpql, Hotel.class);
 		return query.getResultList();
 	}
 

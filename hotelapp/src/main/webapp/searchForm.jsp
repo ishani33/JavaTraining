@@ -13,30 +13,29 @@
 <body>
 <h1>Search Hotels</h1>
 
-<form:form commandName="searchCriteria" action="hotels.do" method="get" cssClass="inline">
+<form method="post" action="hotels.do">
     <span class="errors span-18">
-    	<form:errors path="*"/>
     </span>
     <fieldset>
         <div class="span-8">
             <label for="searchString">Search String:</label>
-            <form:input id="searchString" path="searchString"/>
+            <input type="text" name="searchString"/>
          
         </div>
         <div class="span-6">
-            <div>
+            <%-- <div>
                 <label for="pageSize">Maximum results:</label>
                 <form:select id="pageSize" path="pageSize">
                     <form:option label="5" value="5"/>
                     <form:option label="10" value="10"/>
                     <form:option label="20" value="20"/>
                 </form:select>
-            </div>
+            </div> --%>
         </div>
         <div class="span-3 last">
             <button type="submit">Find Hotels</button>
         </div>
     </fieldset>
-</form:form>
+</form>
 </body>
 </html>
