@@ -1,0 +1,17 @@
+security:
+  oauth2:
+   client:
+     clientId: 0a941f7c58186c1e8e49
+     clientSecret: 4130f7e072e8ec27c57f0dde11be7b10e00bdbfb
+     accessTokenUri: https://github.com/login/oauth/access_token
+     userAuthorizationUri: https://github.com/login/oauth/authorize
+     tokenName: oauth_token
+     authenticationScheme: query
+     clientAuthenticationScheme: form
+   resource:
+    userInfoUri: https://api.github.com/user
+    
+    
+logging:
+  level:
+    org.springframework: DEBUG
